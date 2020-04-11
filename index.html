@@ -42,20 +42,22 @@
         <div class="column col-4 col-md-12">
           <div class="card my-2">
             <div class="card-header">
+              <div class="card-title h5">鼻・その他</div>
+            </div>
+            <div class="card-body">
+              <img v-for="e in texturesSelections" :class="textures == e ? 'btn selected' : 'btn'" :src="e" @click="select('textures', e);" />
+            </div>
+          </div>
+          <div class="card my-2">
+            <div class="card-header">
               <div class="card-title h5">口</div>
             </div>
             <div class="card-body">
               <img v-for="e in mouthsSelections" :class="mouths == e ? 'btn selected' : 'btn'" :src="e" @click="select('mouths', e);" />
             </div>
           </div>
-          <div class="card my-2">
-            <div class="card-header">
-              <div class="card-title h5">顔・その他</div>
-            </div>
-            <div class="card-body">
-              <img v-for="e in texturesSelections" :class="textures == e ? 'btn selected' : 'btn'" :src="e" @click="select('textures', e);" />
-            </div>
-          </div>
+        </div>
+        <div class="column col-4 col-md-12">
           <div class="card my-2">
             <div class="card-header">
               <div class="card-title h5">飾り</div>
@@ -64,8 +66,6 @@
               <img v-for="e in othersSelections" :class="others == e ? 'btn selected' : 'btn'" :src="e" @click="select('others', e);" />
             </div>
           </div>
-        </div>
-        <div class="column col-4 col-md-12">
           <div class="card my-2">
             <div class="card-header">
               <div class="card-title h5">結果 (右クリックで保存 - 未実装)</div>

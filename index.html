@@ -70,12 +70,14 @@
             <div class="card-header">
               <div class="card-title h5">結果 (右クリックで保存 - 未実装)</div>
             </div>
-            <div id="result">
-              <img v-if="base" id="base" :src="base" />
-              <img v-if="textures" id="textures" :src="textures" />
-              <img v-if="mouths" id="mouths" :src="mouths" />
-              <img v-if="eyes" id="eyes" :src="eyes" />
-              <img v-if="others" id="others" :src="others" />
+            <div class="card-body">
+              <div id="result">
+                <img class="result" v-if="base" id="base" :src="base" />
+                <img class="result" v-if="textures" id="textures" :src="textures" />
+                <img class="result" v-if="mouths" id="mouths" :src="mouths" />
+                <img class="result" v-if="eyes" id="eyes" :src="eyes" />
+                <img class="result" v-if="others" id="others" :src="others" />
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="spectre-0.5.8.min.css">
+    <script src="vue-2.5.16.min.js"></script>
+    <title>FUKUMOIJI</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body class="container grid-xl my-2">
+    <div id="app">
+
+      <h1>FUKUMOJI</h1>
+
+      <p>
+        パーツを選んでクソ絵文字を合成するやつ
+      </p>
+
+      <div class="columns my-2">
+        <div class="column col-4">
+          <div class="card my-2">
+            <div class="card-header">
+              <div class="card-title h5">ベース</div>
+            </div>
+            <div class="card-body">
+              <img v-for="e in baseSelections" :class="base == e ? 'btn selected' : 'btn'" :src="e" @click="select('base', e);" />
+            </div>
+          </div>
+          <div class="card my-2">
+            <div class="card-header">
+              <div class="card-title h5">目</div>
+            </div>
+            <div class="card-body">
+              <img v-for="e in eyesSelections" :class="eyes == e ? 'btn selected' : 'btn'" :src="e" @click="select('eyes', e);" />
+            </div>
+          </div>
+        </div>
+        <div class="column col-4">
+          <div class="card my-2">
+            <div class="card-header">
+              <div class="card-title h5">口</div>
+            </div>
+            <div class="card-body">
+              <img v-for="e in mouthsSelections" :class="mouths == e ? 'btn selected' : 'btn'" :src="e" @click="select('mouths', e);" />
+            </div>
+          </div>
+          <div class="card my-2">
+            <div class="card-header">
+              <div class="card-title h5">顔・その他</div>
+            </div>
+            <div class="card-body">
+              <img v-for="e in texturesSelections" :class="textures == e ? 'btn selected' : 'btn'" :src="e" @click="select('textures', e);" />
+            </div>
+          </div>
+          <div class="card my-2">
+            <div class="card-header">
+              <div class="card-title h5">飾り</div>
+            </div>
+            <div class="card-body">
+              <img v-for="e in othersSelections" :class="others == e ? 'btn selected' : 'btn'" :src="e" @click="select('others', e);" />
+            </div>
+          </div>
+        </div>
+        <div class="column col-4">
+          <div class="card my-2">
+            <div class="card-header">
+              <div class="card-title h5">結果 (右クリックで保存)</div>
+            </div>
+            <div id="result">
+              <img v-if="base" id="base" :src="base" />
+              <img v-if="textures" id="textures" :src="textures" />
+              <img v-if="mouths" id="mouths" :src="mouths" />
+              <img v-if="eyes" id="eyes" :src="eyes" />
+              <img v-if="others" id="others" :src="others" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr />
+
+    <small>
+      このページではアクセス数などの集計に Google Analytics (cookie) を使用しています。オプトアウトアドオンで拒否することができます。絵文字の素材には Twemoji ((C) Twitter) を CC-BY ライセンスで使用しています。
+    </small>
+
+    <script src="fukumoji.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,19 @@
+#result img {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}
+
+img.btn {
+  height: 48px;
+  width: 48px;
+  border: 2px solid white;
+}
+
+img.btn:hover {
+  border: 2px solid blue;
+}
+
+img.btn.selected {
+  border: 2px solid red;
+}

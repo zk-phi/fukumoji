@@ -16,8 +16,7 @@
       <h1>FUKUMOJI</h1>
 
       <p>
-        <!-- パーツを選んでクソ絵文字を合成するやつ -->
-        Fukuwarai as a Service (未完成)
+        Fukuwarai as a Service
       </p>
 
       <div class="columns my-2">
@@ -68,16 +67,10 @@
           </div>
           <div class="card my-2">
             <div class="card-header">
-              <div class="card-title h5">結果 (右クリックで保存 - 未実装)</div>
+              <div class="card-title h5">結果 (右クリックで保存)</div>
             </div>
             <div class="card-body">
-              <div id="result">
-                <img class="result" v-if="base" id="base" :src="base" />
-                <img class="result" v-if="textures" id="textures" :src="textures" />
-                <img class="result" v-if="mouths" id="mouths" :src="mouths" />
-                <img class="result" v-if="eyes" id="eyes" :src="eyes" />
-                <img class="result" v-if="others" id="others" :src="others" />
-              </div>
+              <img v-if="result" :src="result" />
             </div>
           </div>
         </div>

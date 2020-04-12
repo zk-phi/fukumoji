@@ -349,9 +349,39 @@ var vm = new Vue({
         textures: "assets/void.svg",
         eyes: "assets/void.svg",
         mouths: "assets/void.svg",
-        others: "assets/void.svg"
+        others: "assets/void.svg",
+        result: "",
+    },
+    mounted: function () {
+        this.updateImage();
     },
     methods: {
-        select: function (key, value) { console.log(value); vm[key] = value; }
+        select: function (key, value) {
+            console.log(value);
+            this[key] = value;
+            this.updateImage();
+        },
+        updateImage: function () {
+            var canvas = document.createElement("canvas");
+            var ctx = canvas.getContext('2d');
+
+            canvas.width = 128;
+            canvas.height = 128;
+
+            // images are expected to be loaded here
+            var img = document.createElement("img");
+            img.src = this.base;
+            ctx.drawImage(img, 0, 0, 128, 128);
+            img.src = this.textures;
+            ctx.drawImage(img, 0, 0, 128, 128);
+            img.src = this.mouths;
+            ctx.drawImage(img, 0, 0, 128, 128);
+            img.src = this.eyes;
+            ctx.drawImage(img, 0, 0, 128, 128);
+            img.src = this.others;
+            ctx.drawImage(img, 0, 0, 128, 128);
+
+            this.result = canvas.toDataURL();
+        }
     }
 });
